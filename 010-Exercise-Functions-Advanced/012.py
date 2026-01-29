@@ -1,0 +1,14 @@
+def palindrome(word: str, index=0):
+    if index >= len(word) / 2:
+        return f"{word} is a palindrome"
+
+    if not word[index] == word[len(word) - 1 - index]:
+        return f"{word} is not a palindrome"
+
+    return palindrome(word, index + 1)
+
+
+print(palindrome("abcdedcba", 0))
+print(palindrome("abcdeedcba", 0))
+print(palindrome("petrp", 0))
+print(palindrome("peter", 0))
