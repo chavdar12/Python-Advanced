@@ -38,6 +38,6 @@ def write_result_in_file(result, file_path: str):
         file.writelines(result)
 
 
-lines = get_lines("../Files/line_numbers.txt")
+lines = get_lines("Files/line_numbers.txt")
 lines = get_characters_count_and_format_output(lines)
 write_result_in_file(lines, "line_numbers_output.txt")
