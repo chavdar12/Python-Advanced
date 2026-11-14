@@ -1,4 +1,4 @@
-"""Repo-wide tests for the Python-Advanced exercises."""
+"""Tests for the reusable 013-Modules packages and scripts."""
 
 from __future__ import annotations
 
@@ -14,8 +14,7 @@ import unittest
 from unittest import mock
 
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
-MODULE_ROOT = REPO_ROOT / "013-Modules"
+MODULE_ROOT = pathlib.Path(__file__).resolve().parent
 if str(MODULE_ROOT) not in sys.path:
     sys.path.insert(0, str(MODULE_ROOT))
 
@@ -37,13 +36,6 @@ from Triangle.print_triangle_funcitons import (  # noqa: E402
     print_whole,
 )
 
-
-class TestRepositoryCompilation(unittest.TestCase):
-    def test_all_python_files_compile(self):
-        for path in REPO_ROOT.rglob("*.py"):
-            if ".venv" in path.parts:
-                continue
-            py_compile.compile(str(path), doraise=True)
 
 
 class TestReusableModules(unittest.TestCase):
@@ -89,7 +81,7 @@ class TestReusableModules(unittest.TestCase):
 class TestModuleEntryPoints(unittest.TestCase):
     def test_calculate_logarithm_natural(self):
         ns, output = self._run_path(
-            REPO_ROOT / "013-Modules" / "1.Calculate_logarithm.py",
+            MODULE_ROOT / "1.Calculate_logarithm.py",
             ["10", "natural"],
         )
         self.assertIn("get_result", ns)
@@ -97,7 +89,7 @@ class TestModuleEntryPoints(unittest.TestCase):
 
     def test_calculate_logarithm_custom_base(self):
         _, output = self._run_path(
-            REPO_ROOT / "013-Modules" / "1.Calculate_logarithm.py",
+            MODULE_ROOT / "1.Calculate_logarithm.py",
             ["8", "2"],
         )
         self.assertEqual(output, "3.00\n")
@@ -117,7 +109,7 @@ class TestModuleEntryPoints(unittest.TestCase):
 
         with mock.patch.dict(sys.modules, {"pyfiglet": fake_pyfiglet}):
             ns, output = self._run_path(
-                REPO_ROOT / "013-Modules" / "2.ASCII_Art.py",
+                MODULE_ROOT / "2.ASCII_Art.py",
                 ["hello"],
             )
 

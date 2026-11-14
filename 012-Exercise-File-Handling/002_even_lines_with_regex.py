@@ -1,6 +1,6 @@
 import re
 
-file = open("../Files/even_lines.txt")
+file = open("Files/even_lines.txt")
 text = file.readlines()
 file.close()
 

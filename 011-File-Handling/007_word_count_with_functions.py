@@ -31,8 +31,8 @@ def count_matches(words: list, txt: str) -> dict:
     return word_count
 
 
-target_words = return_file_content_as_words("../Files/words.txt")
-target_text = return_lowercase_text("../Files/text.txt")
+target_words = return_file_content_as_words("Files/words.txt")
+target_text = return_lowercase_text("Files/text.txt")
 words_and_their_count = count_matches(target_words, target_text)
 words_and_their_count = sorted(words_and_their_count.items(), key=lambda kvp: -kvp[1])
 write_result_in_another_file(words_and_their_count, "output.txt")

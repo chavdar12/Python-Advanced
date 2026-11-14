@@ -28,7 +28,7 @@ def print_result(result: list):
 
 SPECIAL_CHARACTERS = ["-", ",", ".", "!", "?"]
 
-lines = get_each_line("../Files/even_lines.txt")
+lines = get_each_line("Files/even_lines.txt")
 even_lines = get_each_second_line(lines)
 even_lines_without_special_characters = replace_characters(even_lines, SPECIAL_CHARACTERS, "@")
 print_result(even_lines_without_special_characters)

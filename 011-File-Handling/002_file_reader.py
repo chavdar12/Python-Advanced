@@ -1,5 +1,5 @@
 try:
-    with open("../Files/numbers.txt", "r") as file:
+    with open("Files/numbers.txt", "r") as file:
         sum_of_nums = 0
         for el in file:
             sum_of_nums += int(el)
