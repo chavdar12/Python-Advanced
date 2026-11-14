@@ -24,23 +24,11 @@ def find_primary_diagonal(the_matrix):
     return sum_primary_diagonal
 
 
-def find_secondary_diagonal(the_matrix):
-    sum_secondary_diagonal = 0
-    rows = len(the_matrix)
-
-    for x in range(rows):
-        y = rows - 1 - x
-        sum_secondary_diagonal += the_matrix[x][y]
-
-    return sum_secondary_diagonal
-
-
 def print_result(result):
     print(result)
 
 
 matrix = read_matrix()
 result = find_primary_diagonal(matrix)
-result = find_secondary_diagonal(matrix)
 
 print_result(result)

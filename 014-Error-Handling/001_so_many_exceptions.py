@@ -8,4 +8,4 @@ for i in range(len(numbers_list)):
     elif number > 5:
         result /= number
 
-print(result)
+print(int(result) if result == int(result) else result)

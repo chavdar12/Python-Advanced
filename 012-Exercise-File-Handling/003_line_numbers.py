@@ -39,5 +39,5 @@ def write_result_in_file(result, file_path: str):
 
 
 lines = get_lines("../Files/line_numbers.txt")
-lines = format_output(lines)
+lines = get_characters_count_and_format_output(lines)
 write_result_in_file(lines, "line_numbers_output.txt")

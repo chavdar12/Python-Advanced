@@ -9,6 +9,7 @@ python3 -m unittest discover -s tests
 ```
 
 The test suite is grouped by lesson folder:
+- `tests/test_scripts.py` runs every script against the examples from the course PDFs (stdin/stdout, functions, expected exceptions and file handling)
 - `tests/test_by_folder.py` creates one compile test per Python file, grouped into folder-specific test classes
 - `tests/test_repo.py` keeps the higher-level smoke tests for the reusable helpers and module entry points in `013-Modules/`
 
