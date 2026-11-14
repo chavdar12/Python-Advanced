@@ -57,24 +57,6 @@ def find_attacking_knights(matrix, all_knights):
     return attacking_knights
 
 
-def remove_attacking_knights(matrix, attacking_knights):
-    """removes attacking knights"""
-    deletion = 0
-    while attacking_knights():
-
-        most_aggressive_knight = "", ""
-        top_value = None
-        for coordinates, value in attacking_knights.items():
-            if top_value is None or value > top_value:
-                top_value = value
-                most_aggressive_knight = coordinates
-        row, column = most_aggressive_knight
-        matrix[row][column] = "0"
-        deletion += 1
-        attacking_knights = find_attacking_knights(matrix, attacking_knights)
-
-    return deletion
-
 
 def find_most_aggressive_knight(attacking_knights):
     most_aggressive_knight_coordinates = None

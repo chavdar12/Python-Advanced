@@ -45,3 +45,6 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# GUI shop runtime data
+020-Exercise-Modules-Gui-Shop/db/users.json
