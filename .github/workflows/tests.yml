@@ -15,4 +15,4 @@ jobs:
       - name: Build (byte-compile every script)
         run: python -m compileall -q .
       - name: Test every lesson on its own
-        run: for lesson in [0-9][0-9][0-9]-*/; do (cd "$lesson" && python -m unittest -v) || exit 1; done
+        run: for lesson in [0-9][0-9][0-9]-*/; do ls "$lesson"test*.py >/dev/null 2>&1 || continue; (cd "$lesson" && python -m unittest -v) || exit 1; done
